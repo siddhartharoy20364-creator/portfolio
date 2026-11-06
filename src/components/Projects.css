@@ -1,0 +1,343 @@
+.projects-section {
+  position: relative;
+}
+
+.projects-wrapper {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.projects-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  align-items: stretch;
+}
+
+/* Visual & Browser Mockup */
+.project-visual {
+  background: #090707;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border-divider);
+}
+
+.browser-mockup {
+  width: 100%;
+  max-width: 440px;
+  background: #120E0E;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.browser-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #0A0808;
+  border-bottom: 1px solid var(--border-divider);
+}
+
+.browser-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.browser-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-red { background: var(--secondary-accent); opacity: 0.9; }
+.dot-yellow { background: #B3862A; opacity: 0.7; }
+.dot-green { background: #2E8B57; opacity: 0.7; }
+
+.browser-address {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  background: rgba(242, 237, 233, 0.02);
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-divider);
+}
+
+.browser-viewport {
+  padding: 18px;
+  min-height: 200px;
+}
+
+/* Steel UI Mockup */
+.mock-ui-steel {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  height: 100%;
+}
+
+.steel-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.sidebar-item {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: rgba(242, 237, 233, 0.04);
+}
+
+.sidebar-item.active {
+  background: var(--primary-accent);
+}
+
+.steel-main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.steel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.header-status {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--highlight);
+  background: rgba(139, 30, 45, 0.15);
+  border: 1px solid rgba(139, 30, 45, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.steel-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.metric-box {
+  background: rgba(242, 237, 233, 0.02);
+  border: 1px solid var(--border-divider);
+  padding: 8px 6px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metric-num {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.metric-label {
+  font-size: 0.62rem;
+  color: var(--text-dim);
+}
+
+.steel-log {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.log-line {
+  height: 8px;
+  background: rgba(242, 237, 233, 0.04);
+  border-radius: 4px;
+}
+
+.log-line.short {
+  width: 65%;
+}
+
+/* Weather UI Mockup */
+.mock-ui-weather {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.weather-search-mock {
+  width: 90%;
+  padding: 8px 12px;
+  background: rgba(242, 237, 233, 0.02);
+  border: 1px solid var(--border-divider);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.weather-card-mock {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.weather-temp-mock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.temp-mock-num {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.temp-mock-city {
+  font-size: 0.78rem;
+  color: var(--highlight);
+}
+
+.weather-details-mock {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.weather-chip {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: rgba(242, 237, 233, 0.02);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-divider);
+}
+
+/* Project Details */
+.project-details {
+  padding: 38px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.project-index {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--highlight);
+  font-weight: 600;
+}
+
+.project-category {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-heading {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.project-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.tech-pill {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(139, 30, 45, 0.08);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.project-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-btn {
+  padding: 9px 18px;
+  font-size: 0.86rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .project-row {
+    grid-template-columns: 1fr;
+  }
+
+  .project-visual {
+    border-right: none;
+    border-bottom: 1px solid var(--border-divider);
+    padding: 24px;
+  }
+
+  .project-details {
+    padding: 28px 24px;
+  }
+}

@@ -1,0 +1,117 @@
+.skills-section {
+  position: relative;
+}
+
+.skills-wrapper {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skills-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.skill-group-card {
+  padding: 30px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.group-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.group-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: rgba(139, 30, 45, 0.14);
+  border: 1px solid var(--border-color);
+  color: var(--highlight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.group-title {
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.group-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.skills-pill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(23, 19, 19, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
+  background: rgba(139, 30, 45, 0.08);
+  border-color: var(--primary-accent);
+  transform: translateX(3px);
+}
+
+.skill-pill-icon {
+  color: var(--highlight);
+  flex-shrink: 0;
+}
+
+.skill-pill-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.skill-pill-name {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.skill-pill-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
