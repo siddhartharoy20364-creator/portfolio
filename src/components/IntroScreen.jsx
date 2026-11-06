@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import introVideo from '../assets/intro.mp4';
 import './IntroScreen.css';
 
 export default function IntroScreen({ onComplete }) {
@@ -14,16 +15,16 @@ export default function IntroScreen({ onComplete }) {
     // Lock scrolling during intro
     document.body.style.overflow = 'hidden';
 
-    // Begin fade-out at 1.7s
+    // Begin fade-out at 2.4s
     const fadeTimer = setTimeout(() => {
       setFadingOut(true);
-    }, 1700);
+    }, 2400);
 
-    // Complete and unmount at 2.3s
+    // Complete and unmount at 3.0s
     const doneTimer = setTimeout(() => {
       document.body.style.overflow = '';
       onComplete?.();
-    }, 2300);
+    }, 3000);
 
     return () => {
       clearTimeout(fadeTimer);
@@ -37,6 +38,21 @@ export default function IntroScreen({ onComplete }) {
       <div className="intro-ambient-glow" />
 
       <div className="intro-content">
+        {/* Elegantly framed 9:16 video */}
+        <div className="intro-video-container">
+          <div className="intro-video-glow" />
+          <div className="intro-video-frame">
+            <video
+              src={introVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="intro-video"
+            />
+          </div>
+        </div>
+
         <div className="intro-badge">
           <span className="intro-dot" />
           <span className="intro-role">/ dev</span>
@@ -53,4 +69,3 @@ export default function IntroScreen({ onComplete }) {
     </div>
   );
 }
-
